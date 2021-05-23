@@ -1,0 +1,9 @@
+[ceph]
+172.16.76.110 host_name=node1 role=admin
+172.16.76.111 host_name=node2 role=cluster
+172.16.76.112 host_name=node3 role=cluster
+
+[all:vars]
+ansible_ssh_user=root
+ansible_ssh_port=22
+ansible_ssh_port='root'

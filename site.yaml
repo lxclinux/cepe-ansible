@@ -1,0 +1,5 @@
+---
+  hosts: ceph
+  tags: intial sys
+  roles:
+    - role: 01-init-sys-sys

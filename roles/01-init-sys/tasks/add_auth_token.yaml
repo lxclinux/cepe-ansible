@@ -1,0 +1,10 @@
+---
+- name {{ id_rsa_pub_path }} stat
+  stat:
+    path: {{ id_rsa_pub_path }}
+    register: rsa_pub_stat
+
+
+- name: add auth token
+  authorized_key: user={{ ansible_ssh_user }} key="{{ lookup('file', {{ id_rsa_pub_path }} ) }}"
+  when: rsa_pub_stat.stat.exits == False
